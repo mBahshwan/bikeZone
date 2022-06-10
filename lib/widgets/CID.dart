@@ -72,7 +72,7 @@ class _CustomerInformationState extends State<CustomerInformation> {
                             margin: EdgeInsets.only(left: 50),
                             padding: EdgeInsets.all(10),
                             child: Text(
-                              " ${snapshot.data[i]['signature']}",
+                              " ${snapshot.data[i]['phone']}",
                             ),
                             decoration: BoxDecoration(
                               border: Border.all(),

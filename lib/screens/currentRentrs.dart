@@ -30,6 +30,7 @@ class _CurrentRentrsState extends State<CurrentRentrs> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.blue[400],
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
           centerTitle: true,

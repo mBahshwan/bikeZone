@@ -17,12 +17,14 @@ class SqlDb {
     String databasepath = await getDatabasesPath();
     String path = join(databasepath, 'bikeZone.db');
     Database mydb = await openDatabase(path,
-        onCreate: _onCreate, version: 2, onUpgrade: _onUpgrade);
+        onCreate: _onCreate, version: 3, onUpgrade: _onUpgrade);
     return mydb;
   }
 
   _onUpgrade(Database db, int oldversion, int newversion) async {
-    await db.execute("ALTER TABLE clients ADD COLUMN signature TEXT");
+    // await db.execute("ALTER TABLE clients ADD COLUMN signature TEXT");
+    // await db.execute("DROP TABLE signature");
+
     print("onUpgrade =====================================");
   }
 

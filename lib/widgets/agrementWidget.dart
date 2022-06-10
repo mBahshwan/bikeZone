@@ -57,10 +57,11 @@ class AgrementWidget extends StatelessWidget {
             child:
                 Column(mainAxisAlignment: MainAxisAlignment.start, children: [
               Container(
-                  alignment: Alignment.centerLeft,
-                  height: 60,
-                  width: 100,
-                  child: Image.asset("images/logo.jpeg")),
+                alignment: Alignment.centerLeft,
+                height: 60,
+                width: 100,
+                child: Image.asset("images/logo.jpeg"),
+              ),
               Container(
                 decoration: BoxDecoration(
                     border: Border.all(color: Colors.black, width: 1)),
@@ -338,7 +339,7 @@ class AgrementWidget extends StatelessWidget {
                                   context.read<RentDuration>().howLong!;
                               int response = await sqlDb.insertData('''
                                           INSERT INTO "clients" (id, name, phone , time, kidzCycles, adultCycles, duration )
-                                           VALUES (${customerId!.text}, "${customerName!.text}", "${customerPhoneNumber!.text}", "$lastVisit", "$howManyKidzCycles", "$howManyAdultCycles", "$rentDuration", )
+                                           VALUES (${customerId!.text}, "${customerName!.text}", "${customerPhoneNumber!.text}", "$lastVisit", "$howManyKidzCycles", "$howManyAdultCycles", "$rentDuration" )
                                             ''');
                               await sqlDb.insertData('''
                                           INSERT INTO "currentClients" (id, name, phone , time, kidzCycles, adultCycles, duration )
