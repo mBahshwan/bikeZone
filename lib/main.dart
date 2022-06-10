@@ -1,5 +1,4 @@
 import 'dart:isolate';
-import 'dart:ui';
 import 'package:bike_zoon_app/providers/rentDuration.dart';
 import 'package:bike_zoon_app/providers/howManyCycleSelected.dart';
 import 'package:bike_zoon_app/screens/agrement_screen.dart';

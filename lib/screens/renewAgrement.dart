@@ -1,17 +1,5 @@
-import 'package:bike_zoon_app/database/sqlflite.dart';
-import 'package:bike_zoon_app/providers/howManyCycleSelected.dart';
-import 'package:bike_zoon_app/providers/rentDuration.dart';
-import 'package:bike_zoon_app/screens/showdata.dart';
-import 'package:bike_zoon_app/providers/totalPrice.dart';
 import 'package:bike_zoon_app/widgets/agrementWidget.dart';
-import 'package:bike_zoon_app/widgets/conditionsAndTerms.dart';
-import 'package:bike_zoon_app/widgets/howLong.dart';
-import 'package:bike_zoon_app/widgets/howManyCycleAdult.dart';
-import 'package:bike_zoon_app/widgets/howManyCycleKidz.dart';
-import 'package:bike_zoon_app/widgets/signatureHere.dart';
-import 'package:bike_zoon_app/widgets/textForm.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
 class ReNewAgrement extends StatefulWidget {
   final String? customerName;
