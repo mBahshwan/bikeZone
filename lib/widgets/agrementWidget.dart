@@ -59,7 +59,7 @@ class AgrementWidget extends StatelessWidget {
               Container(
                 alignment: Alignment.centerLeft,
                 height: 60,
-                width: 100,
+                width: 130,
                 child: Image.asset("images/logo.jpeg"),
               ),
               Container(
