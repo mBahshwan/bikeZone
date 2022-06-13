@@ -112,8 +112,8 @@ class AgrementWidget extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      HowManyCyclesAdult(),
-                      HowManyCyclesKidz(),
+                      SizedBox(child: HowManyCyclesAdult(), width: 170),
+                      SizedBox(child: HowManyCyclesKidz(), width: 170),
                     ]),
               ),
               Row(
@@ -350,6 +350,9 @@ class AgrementWidget extends StatelessWidget {
                                     builder: ((context) => ShowData(
                                           id: customerId!.text,
                                         ))));
+                                customerName!.clear();
+                                customerId!.clear();
+                                customerPhoneNumber!.clear();
                               }
 
                               deletSignature();

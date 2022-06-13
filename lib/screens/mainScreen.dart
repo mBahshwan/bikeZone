@@ -12,6 +12,8 @@ class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.blue[400], body: MainScreenWidget());
+        appBar: AppBar(title: Text("BikeZone")),
+        backgroundColor: Colors.blue[400],
+        body: MainScreenWidget());
   }
 }
