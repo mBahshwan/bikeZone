@@ -1,5 +1,4 @@
 import 'dart:typed_data';
-
 import 'package:bike_zoon_app/database/sqlflite.dart';
 import 'package:bike_zoon_app/providers/howManyCycleSelected.dart';
 import 'package:bike_zoon_app/providers/rentDuration.dart';
@@ -130,69 +129,63 @@ class AgrementWidget extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Container(
+                  Expanded(
+                    flex: 1,
+                    child: Container(
                       height: 60,
                       width: 120,
-                      child: Expanded(
-                        flex: 1,
-                        child: Container(
-                          width: 100,
-                          decoration:
-                              BoxDecoration(border: Border.all(width: 1)),
-                          margin: EdgeInsets.symmetric(vertical: 10),
-                          child: Form(
-                              child: Consumer<TotalPrice>(
-                            builder: (context, val, child) => TextFormField(
-                              onChanged: (value) {
-                                try {
-                                  val.adultPrice = int.parse(value);
-                                } on FormatException {
-                                  return null;
-                                }
-                              },
-                              keyboardType: TextInputType.number,
-                              textAlign: TextAlign.center,
-                              decoration: InputDecoration(
-                                  border: OutlineInputBorder(
-                                      borderRadius: BorderRadius.all(
-                                          Radius.circular(2)))),
-                            ),
-                          )),
+                      decoration: BoxDecoration(border: Border.all(width: 1)),
+                      margin: EdgeInsets.symmetric(vertical: 10),
+                      child: Form(
+                          child: Consumer<TotalPrice>(
+                        builder: (context, val, child) => TextFormField(
+                          onChanged: (value) {
+                            try {
+                              val.adultPrice = int.parse(value);
+                            } on FormatException {
+                              return null;
+                            }
+                          },
+                          keyboardType: TextInputType.number,
+                          textAlign: TextAlign.center,
+                          decoration: InputDecoration(
+                              border: OutlineInputBorder(
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(2)))),
                         ),
                       )),
+                    ),
+                  ),
                   SizedBox(
                     width: 50,
                   ),
-                  Container(
+                  Expanded(
+                    flex: 1,
+                    child: Container(
                       height: 60,
                       width: 120,
-                      child: Expanded(
-                        flex: 1,
-                        child: Container(
-                          width: 100,
-                          decoration:
-                              BoxDecoration(border: Border.all(width: 1)),
-                          margin: EdgeInsets.symmetric(vertical: 10),
-                          child: Form(
-                              child: Consumer<TotalPrice>(
-                            builder: (context, val, child) => TextFormField(
-                              onChanged: ((value) {
-                                try {
-                                  val.kidzPrice = int.parse(value);
-                                } on FormatException {
-                                  return null;
-                                }
-                              }),
-                              keyboardType: TextInputType.number,
-                              textAlign: TextAlign.center,
-                              decoration: InputDecoration(
-                                  border: OutlineInputBorder(
-                                      borderRadius: BorderRadius.all(
-                                          Radius.circular(2)))),
-                            ),
-                          )),
+                      decoration: BoxDecoration(border: Border.all(width: 1)),
+                      margin: EdgeInsets.symmetric(vertical: 10),
+                      child: Form(
+                          child: Consumer<TotalPrice>(
+                        builder: (context, val, child) => TextFormField(
+                          onChanged: ((value) {
+                            try {
+                              val.kidzPrice = int.parse(value);
+                            } on FormatException {
+                              return null;
+                            }
+                          }),
+                          keyboardType: TextInputType.number,
+                          textAlign: TextAlign.center,
+                          decoration: InputDecoration(
+                              border: OutlineInputBorder(
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(2)))),
                         ),
                       )),
+                    ),
+                  ),
                 ],
               ),
               Padding(
@@ -211,16 +204,11 @@ class AgrementWidget extends StatelessWidget {
                         child: Container(
                             height: 60,
                             width: 120,
-                            child: Expanded(
-                              flex: 1,
-                              child: Container(
-                                  alignment: Alignment.center,
-                                  width: 100,
-                                  decoration: BoxDecoration(
-                                      border: Border.all(width: 1)),
-                                  margin: EdgeInsets.symmetric(vertical: 10),
-                                  child: Text("${val.totalPrice} ريال ")),
-                            )),
+                            alignment: Alignment.center,
+                            decoration:
+                                BoxDecoration(border: Border.all(width: 1)),
+                            margin: EdgeInsets.symmetric(vertical: 10),
+                            child: Text("${val.totalPrice} ريال ")),
                       )),
                 ),
               ),
@@ -236,17 +224,14 @@ class AgrementWidget extends StatelessWidget {
                 ),
                 child: ListView(
                   children: [
-                    Expanded(
-                      flex: 1,
-                      child: Container(
-                          child: Text(
-                        "الشروط والاحكام",
-                        textAlign: TextAlign.center,
-                        textDirection: TextDirection.rtl,
-                        style: TextStyle(
-                            fontSize: 15, fontWeight: FontWeight.bold),
-                      )),
-                    ),
+                    Container(
+                        child: Text(
+                      "الشروط والاحكام",
+                      textAlign: TextAlign.center,
+                      textDirection: TextDirection.rtl,
+                      style:
+                          TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+                    )),
                     ListView.builder(
                       shrinkWrap: true,
                       physics: ScrollPhysics(),

@@ -108,12 +108,9 @@ class _CustomerInformationState extends State<CustomerInformation> {
                       children: [
                         Padding(
                           padding: const EdgeInsets.only(left: 90),
-                          child: Expanded(
-                            flex: 2,
-                            child: Container(
-                              child: Text(
-                                "  رقم هوية العميل",
-                              ),
+                          child: Container(
+                            child: Text(
+                              "  رقم هوية العميل",
                             ),
                           ),
                         ),
