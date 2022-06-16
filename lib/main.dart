@@ -1,4 +1,4 @@
-import 'dart:isolate';
+import 'package:bike_zoon_app/components/appLocal.dart';
 import 'package:bike_zoon_app/providers/rentDuration.dart';
 import 'package:bike_zoon_app/providers/howManyCycleSelected.dart';
 import 'package:bike_zoon_app/screens/agrement_screen.dart';
@@ -9,15 +9,15 @@ import 'package:bike_zoon_app/providers/totalPrice.dart';
 import 'package:bike_zoon_app/screens/currentRentrs.dart';
 import 'package:bike_zoon_app/widgets/testTimer.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-final ReceivePort port = ReceivePort();
-const String countKey = 'count';
-const String isolateName = 'isolate';
-SharedPreferences? prefs;
+SharedPreferences? mySharedPreferences;
 
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  mySharedPreferences = await SharedPreferences.getInstance();
   runApp(const MyApp());
 }
 
@@ -43,6 +43,25 @@ class MyApp extends StatelessWidget {
       ],
       child: MaterialApp(
         home: MainScreen(),
+        localizationsDelegates: [
+          AppLocale.delegate,
+          GlobalMaterialLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate
+        ],
+        supportedLocales: [Locale("en", ""), Locale("ar", "")],
+        localeResolutionCallback: (currentLang, supportLang) {
+          if (currentLang != null) {
+            for (Locale locale in supportLang) {
+              if (locale.languageCode == currentLang.languageCode) {
+                mySharedPreferences!
+                    .setString("lang", currentLang.languageCode);
+
+                return currentLang;
+              }
+            }
+          }
+          return supportLang.first;
+        },
         debugShowCheckedModeBanner: false,
         routes: {
           "showData": (context) => ShowData(),

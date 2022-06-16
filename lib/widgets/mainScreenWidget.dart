@@ -1,3 +1,4 @@
+import 'package:bike_zoon_app/components/appLocal.dart';
 import 'package:flutter/material.dart';
 
 class MainScreenWidget extends StatefulWidget {
@@ -42,7 +43,8 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
                     ),
                     Padding(
                       padding: const EdgeInsets.all(8.0),
-                      child: Text("أنشاء عقد ايجار ",
+                      child: Text(
+                          "${getLang(context, "create rent agrement")} ",
                           style: TextStyle(
                               fontSize: 20, fontWeight: FontWeight.bold),
                           textDirection: TextDirection.ltr),
