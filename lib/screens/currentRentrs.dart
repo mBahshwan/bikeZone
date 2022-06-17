@@ -1,3 +1,4 @@
+import 'package:bike_zoon_app/components/appLocal.dart';
 import 'package:bike_zoon_app/database/sqlflite.dart';
 import 'package:flutter/material.dart';
 import 'package:jiffy/jiffy.dart';
@@ -34,7 +35,7 @@ class _CurrentRentrsState extends State<CurrentRentrs> {
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
           centerTitle: true,
-          title: Text("المستأجرين الحاليين"),
+          title: Text("${getLang(context, "current renters")} "),
           leading: IconButton(
               onPressed: () {
                 Navigator.of(context).pop();
@@ -59,8 +60,8 @@ class _CurrentRentrsState extends State<CurrentRentrs> {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: <Widget>[
-                      Text(":رقم هاتف العميل"),
-                      Text(":اسم المستأجر")
+                      Text("${getLang(context, "customer number")}"),
+                      Text("${getLang(context, "customer name")} ")
                     ],
                   ),
                   SizedBox(height: 5),
@@ -90,23 +91,23 @@ class _CurrentRentrsState extends State<CurrentRentrs> {
                           decoration:
                               BoxDecoration(border: Border.all(width: 1)),
                           child: Text(
-                              "${currentRenter[i]['kidzCycles']} : (صغار) عدد الدراجات")),
+                              "${currentRenter[i]['kidzCycles']} : ${getLang(context, "how many kidz bicycle")} ")),
                       Container(
                           padding: EdgeInsets.all(6),
                           decoration:
                               BoxDecoration(border: Border.all(width: 1)),
                           child: Text(
-                              "${currentRenter[i]['adultCycles']}  : (كبار)عدد الدراجات ")),
+                              "${currentRenter[i]['adultCycles']}  :${getLang(context, "how many adult bicycle")} ")),
                       IconButton(
                           onPressed: () {
                             showDialog(
                                 context: context,
                                 builder: (context) => AlertDialog(
                                       content: Text(
-                                        "هل انت متأكد من انك تريد الحذف",
+                                        "${getLang(context, "sure delete")} ",
                                       ),
                                       title: Text(
-                                          "ملاحظه : اذا ضغطت على نعم سيتم حذف ${currentRenter[i]["name"]}  صاحب الرقم لهاتف ${currentRenter[i]["phone"]}",
+                                          "   ${getLang(context, "delete note1")}  ${currentRenter[i]["name"]}  ${getLang(context, "delete note2")}  ${currentRenter[i]["phone"]}",
                                           style: TextStyle(fontSize: 13)),
                                       actions: [
                                         IconButton(
@@ -145,8 +146,8 @@ class _CurrentRentrsState extends State<CurrentRentrs> {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: <Widget>[
-                      Text(":المده المستأجره "),
-                      Text(":وقت دخول العميل ")
+                      Text(":${getLang(context, "rent duration")} "),
+                      Text(":${getLang(context, "customer login time")} ")
                     ],
                   ),
                   Row(

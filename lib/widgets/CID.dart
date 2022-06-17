@@ -1,3 +1,4 @@
+import 'package:bike_zoon_app/components/appLocal.dart';
 import 'package:bike_zoon_app/widgets/signatureHere.dart';
 import 'package:flutter/material.dart';
 import 'package:jiffy/jiffy.dart';
@@ -47,23 +48,20 @@ class _CustomerInformationState extends State<CustomerInformation> {
                     ),
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
-                        Padding(
-                          padding: const EdgeInsets.only(left: 110),
-                          child: Text(
-                            " رقم العميل",
-                          ),
+                        Text(
+                          "${getLang(context, "customer number")}",
                         ),
-                        SizedBox(
-                          width: 100,
-                        ),
-                        Text("اسم العميل"),
+                        Text("${getLang(context, "customer name")} "),
                       ],
                     ),
                     SizedBox(
                       height: 10,
                     ),
                     Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Expanded(
                           flex: 2,
@@ -78,9 +76,6 @@ class _CustomerInformationState extends State<CustomerInformation> {
                               border: Border.all(),
                             ),
                           ),
-                        ),
-                        SizedBox(
-                          width: 40,
                         ),
                         Expanded(
                           flex: 2,
@@ -105,23 +100,16 @@ class _CustomerInformationState extends State<CustomerInformation> {
                     ),
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
-                        Padding(
-                          padding: const EdgeInsets.only(left: 90),
-                          child: Container(
-                            child: Text(
-                              "  رقم هوية العميل",
-                            ),
+                        Container(
+                          child: Text(
+                            "${getLang(context, "customer id")} ",
                           ),
                         ),
-                        SizedBox(
-                          width: 80,
-                        ),
-                        Expanded(
-                            flex: 2,
-                            child: Container(
-                                margin: EdgeInsets.only(right: 50),
-                                child: Text("عدد الزيارات"))),
+                        Container(
+                            child: Text(
+                                "${getLang(context, "number of visits")} ")),
                       ],
                     ),
                     SizedBox(
@@ -175,7 +163,7 @@ class _CustomerInformationState extends State<CustomerInformation> {
                     SizedBox(
                       height: 6,
                     ),
-                    Text(" تاريخ زيارة العميل "),
+                    Text("${getLang(context, "customer visit date")} "),
                     SizedBox(
                       height: 20,
                     ),

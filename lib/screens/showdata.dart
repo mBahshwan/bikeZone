@@ -80,10 +80,9 @@ class _ShowDataState extends State<ShowData> {
                             context: context,
                             builder: (context) => AlertDialog(
                                   content: Text(
-                                    "هل انت متأكد من انك تريد الحذف",
-                                  ),
+                                      " ${getLang(context, "sure delete")}"),
                                   title: Text(
-                                      "ملاحظه : اذا ضغطت على نعم سيتم حذف ${customerTitle[i]['name']}",
+                                      " ${getLang(context, "delete note1")} ${customerTitle[i]['name']}",
                                       style: TextStyle(fontSize: 13)),
                                   actions: [
                                     IconButton(

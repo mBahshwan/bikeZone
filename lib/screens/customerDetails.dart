@@ -1,3 +1,4 @@
+import 'package:bike_zoon_app/components/appLocal.dart';
 import 'package:bike_zoon_app/database/sqlflite.dart';
 import 'package:bike_zoon_app/screens/renewAgrement.dart';
 import 'package:bike_zoon_app/widgets/CID.dart';
@@ -63,7 +64,7 @@ class _CustomerDetailsState extends State<CustomerDetails> {
             child: Icon(Icons.add)),
         appBar: AppBar(
             title: Text(
-              "تفاصيل العميل",
+              "${getLang(context, "customer details")}",
               textAlign: TextAlign.center,
             ),
             leading: IconButton(

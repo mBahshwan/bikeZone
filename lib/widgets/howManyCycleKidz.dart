@@ -1,3 +1,4 @@
+import 'package:bike_zoon_app/components/appLocal.dart';
 import 'package:bike_zoon_app/providers/howManyCycleSelected.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -18,7 +19,7 @@ class _HowManyCyclesKidzState extends State<HowManyCyclesKidz> {
       child: Column(
         children: [
           Text(
-            " عدد الدراجات (اطفال)",
+            "${getLang(context, "how many kidz bicycle")} ",
             style: TextStyle(fontSize: 15),
           ),
           Consumer<HowManyCycleSelectedKidz>(

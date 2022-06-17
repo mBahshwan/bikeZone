@@ -1,4 +1,5 @@
 import 'dart:typed_data';
+import 'package:bike_zoon_app/components/appLocal.dart';
 import 'package:bike_zoon_app/database/sqlflite.dart';
 import 'package:bike_zoon_app/providers/howManyCycleSelected.dart';
 import 'package:bike_zoon_app/providers/rentDuration.dart';
@@ -66,8 +67,8 @@ class AgrementWidget extends StatelessWidget {
                     border: Border.all(color: Colors.black, width: 1)),
                 padding:
                     const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-                child: const Text(
-                  "عقد ايجار",
+                child: Text(
+                  "${getLang(context, "rent agreement")} ",
                   style: const TextStyle(
                       color: Colors.black,
                       fontSize: 30,
@@ -79,13 +80,13 @@ class AgrementWidget extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   TextFormInfo(
-                    infoType: "رقم الهاتف",
+                    infoType: "${getLang(context, "customer number")} ",
                     keybordType: TextInputType.phone,
                     controller: customerPhoneNumber,
                   ),
                   const SizedBox(width: 10),
                   TextFormInfo(
-                      infoType: "الاسم",
+                      infoType: "${getLang(context, "customer name")} ",
                       keybordType: TextInputType.name,
                       controller: customerName),
                 ],
@@ -99,7 +100,7 @@ class AgrementWidget extends StatelessWidget {
                     width: 10,
                   ),
                   TextFormInfo(
-                    infoType: "رقم الهويه",
+                    infoType: "${getLang(context, "customer id")} ",
                     keybordType: TextInputType.number,
                     controller: customerId,
                   ),
@@ -119,10 +120,10 @@ class AgrementWidget extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text(": السعر"),
+                    Text("${getLang(context, "price")} :"),
                     Padding(
                       padding: const EdgeInsets.only(left: 100),
-                      child: Text(": السعر"),
+                      child: Text("${getLang(context, "price")} :"),
                     )
                   ]),
               Row(
@@ -193,7 +194,7 @@ class AgrementWidget extends StatelessWidget {
                 child: Consumer<TotalPrice>(
                   builder: (context, val, child) => ListTile(
                       title: MaterialButton(
-                          child: Text(": المجموع"),
+                          child: Text("${getLang(context, "total")} "),
                           onPressed: () {
                             val.getTotal();
                           }),
@@ -208,7 +209,8 @@ class AgrementWidget extends StatelessWidget {
                             decoration:
                                 BoxDecoration(border: Border.all(width: 1)),
                             margin: EdgeInsets.symmetric(vertical: 10),
-                            child: Text("${val.totalPrice} ريال ")),
+                            child: Text(
+                                "${val.totalPrice} ${getLang(context, "rial")} ")),
                       )),
                 ),
               ),

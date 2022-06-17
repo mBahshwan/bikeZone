@@ -1,3 +1,4 @@
+import 'package:bike_zoon_app/components/appLocal.dart';
 import 'package:bike_zoon_app/providers/rentDuration.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -21,17 +22,17 @@ class _HowLongCycleState extends State<HowLongCycle> {
         decoration: BoxDecoration(border: Border.all(width: 1)),
         child: Consumer<RentDuration>(
           builder: (context, valu, child) => Column(children: [
-            Text("عدد الساعات"),
+            Text("${getLang(context, "how long")} "),
             RadioListTile(
-                title: Text("ساعه"),
-                value: "ساعه",
+                title: Text("${getLang(context, "one hour")} "),
+                value: "${getLang(context, "one hour")} ",
                 groupValue: valu.howLong,
                 onChanged: (val) {
                   valu.changeDuration(val);
                 }),
             RadioListTile(
-                title: Text("نصف ساعه"),
-                value: "نصف ساعه",
+                title: Text("${getLang(context, "half an hour")} "),
+                value: "${getLang(context, "half an hour")} ",
                 groupValue: valu.howLong,
                 onChanged: (val) {
                   valu.changeDuration(val);

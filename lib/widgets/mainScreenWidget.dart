@@ -17,6 +17,7 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
             mainAxisSpacing: 6,
+            childAspectRatio: 1,
             crossAxisSpacing: 6,
           ),
           children: [

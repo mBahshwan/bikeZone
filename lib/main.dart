@@ -11,13 +11,9 @@ import 'package:bike_zoon_app/widgets/testTimer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:provider/provider.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
-SharedPreferences? mySharedPreferences;
 
 void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  mySharedPreferences = await SharedPreferences.getInstance();
   runApp(const MyApp());
 }
 
