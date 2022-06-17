@@ -1,3 +1,4 @@
+import 'package:bike_zoon_app/components/appLocal.dart';
 import 'package:bike_zoon_app/database/sqlflite.dart';
 import 'package:bike_zoon_app/screens/customerDetails.dart';
 import 'package:bike_zoon_app/screens/dataSearch.dart';
@@ -37,7 +38,7 @@ class _ShowDataState extends State<ShowData> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("قايمة العملاء"),
+        title: Text("${getLang(context, "customer list")} "),
         actions: [
           IconButton(
               onPressed: () {

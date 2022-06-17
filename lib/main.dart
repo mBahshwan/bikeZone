@@ -21,8 +21,24 @@ void main() async {
   runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({Key? key}) : super(key: key);
+  static void setLocale(BuildContext context, Locale newLocale) {
+    _MyAppState? state = context.findAncestorStateOfType<_MyAppState>();
+    state!.setLocale(newLocale);
+  }
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  Locale? _locale;
+  setLocale(Locale locale) {
+    setState(() {
+      _locale = locale;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -43,19 +59,18 @@ class MyApp extends StatelessWidget {
       ],
       child: MaterialApp(
         home: MainScreen(),
+        locale: _locale,
         localizationsDelegates: [
           AppLocale.delegate,
           GlobalMaterialLocalizations.delegate,
-          GlobalWidgetsLocalizations.delegate
+          GlobalWidgetsLocalizations.delegate,
+          GlobalCupertinoLocalizations.delegate,
         ],
-        supportedLocales: [Locale("en", ""), Locale("ar", "")],
+        supportedLocales: [Locale("en", "US"), Locale("ar", "SA")],
         localeResolutionCallback: (currentLang, supportLang) {
           if (currentLang != null) {
             for (Locale locale in supportLang) {
               if (locale.languageCode == currentLang.languageCode) {
-                mySharedPreferences!
-                    .setString("lang", currentLang.languageCode);
-
                 return currentLang;
               }
             }

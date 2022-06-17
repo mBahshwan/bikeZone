@@ -68,10 +68,11 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
                           Icons.group,
                           size: 100,
                         )),
-                    Text(" عرض العملاء  ",
-                        style: TextStyle(
-                            fontSize: 20, fontWeight: FontWeight.bold),
-                        textDirection: TextDirection.rtl),
+                    Text(
+                      "${getLang(context, "show customers")} ",
+                      style:
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    ),
                   ],
                 )),
             InkWell(
@@ -97,7 +98,7 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
                     ),
                     Padding(
                       padding: const EdgeInsets.all(8.0),
-                      child: Text("  المستأجرين الحاليين ",
+                      child: Text("${getLang(context, "current renters")} ",
                           style: TextStyle(
                               fontSize: 20, fontWeight: FontWeight.bold),
                           textDirection: TextDirection.ltr),
