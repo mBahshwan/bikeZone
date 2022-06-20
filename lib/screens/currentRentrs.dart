@@ -146,8 +146,8 @@ class _CurrentRentrsState extends State<CurrentRentrs> {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: <Widget>[
-                      Text(":${getLang(context, "rent duration")} "),
-                      Text(":${getLang(context, "customer login time")} ")
+                      Text("${getLang(context, "rent duration")} "),
+                      Text("${getLang(context, "customer login time")} ")
                     ],
                   ),
                   Row(

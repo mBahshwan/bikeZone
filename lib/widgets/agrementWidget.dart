@@ -118,101 +118,86 @@ class AgrementWidget extends StatelessWidget {
               ),
               Row(
                   crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     Text("${getLang(context, "price")} :"),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 100),
-                      child: Text("${getLang(context, "price")} :"),
-                    )
+                    Text("${getLang(context, "price")} :"),
                   ]),
               Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  Expanded(
-                    flex: 1,
-                    child: Container(
-                      height: 60,
-                      width: 120,
-                      decoration: BoxDecoration(border: Border.all(width: 1)),
-                      margin: EdgeInsets.symmetric(vertical: 10),
-                      child: Form(
-                          child: Consumer<TotalPrice>(
-                        builder: (context, val, child) => TextFormField(
-                          onChanged: (value) {
-                            try {
-                              val.adultPrice = int.parse(value);
-                            } on FormatException {
-                              return null;
-                            }
-                          },
-                          keyboardType: TextInputType.number,
-                          textAlign: TextAlign.center,
-                          decoration: InputDecoration(
-                              border: OutlineInputBorder(
-                                  borderRadius:
-                                      BorderRadius.all(Radius.circular(2)))),
-                        ),
-                      )),
-                    ),
+                  Container(
+                    height: 40,
+                    width: 100,
+                    decoration: BoxDecoration(border: Border.all(width: 1)),
+                    margin: EdgeInsets.symmetric(vertical: 10),
+                    child: Form(
+                        child: Consumer<TotalPrice>(
+                      builder: (context, val, child) => TextFormField(
+                        onChanged: (value) {
+                          try {
+                            val.adultPrice = int.parse(value);
+                          } on FormatException {
+                            return null;
+                          }
+                        },
+                        keyboardType: TextInputType.number,
+                        textAlign: TextAlign.center,
+                        decoration: InputDecoration(
+                            border: OutlineInputBorder(
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(2)))),
+                      ),
+                    )),
                   ),
-                  SizedBox(
-                    width: 50,
-                  ),
-                  Expanded(
-                    flex: 1,
-                    child: Container(
-                      height: 60,
-                      width: 120,
-                      decoration: BoxDecoration(border: Border.all(width: 1)),
-                      margin: EdgeInsets.symmetric(vertical: 10),
-                      child: Form(
-                          child: Consumer<TotalPrice>(
-                        builder: (context, val, child) => TextFormField(
-                          onChanged: ((value) {
-                            try {
-                              val.kidzPrice = int.parse(value);
-                            } on FormatException {
-                              return null;
-                            }
-                          }),
-                          keyboardType: TextInputType.number,
-                          textAlign: TextAlign.center,
-                          decoration: InputDecoration(
-                              border: OutlineInputBorder(
-                                  borderRadius:
-                                      BorderRadius.all(Radius.circular(2)))),
-                        ),
-                      )),
-                    ),
+                  Container(
+                    height: 40,
+                    width: 100,
+                    decoration: BoxDecoration(border: Border.all(width: 1)),
+                    margin: EdgeInsets.symmetric(vertical: 10),
+                    child: Form(
+                        child: Consumer<TotalPrice>(
+                      builder: (context, val, child) => TextFormField(
+                        onChanged: ((value) {
+                          try {
+                            val.kidzPrice = int.parse(value);
+                          } on FormatException {
+                            return null;
+                          }
+                        }),
+                        keyboardType: TextInputType.number,
+                        textAlign: TextAlign.center,
+                        decoration: InputDecoration(
+                            border: OutlineInputBorder(
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(2)))),
+                      ),
+                    )),
                   ),
                 ],
               ),
-              Padding(
-                padding: const EdgeInsets.only(left: 100),
-                child: Consumer<TotalPrice>(
-                  builder: (context, val, child) => ListTile(
-                      title: MaterialButton(
-                          child: Text("${getLang(context, "total")} "),
-                          onPressed: () {
-                            val.getTotal();
-                          }),
-                      leading: Container(
-                        height: 60,
-                        width: 120,
-                        alignment: Alignment.center,
-                        child: Container(
-                            height: 60,
-                            width: 120,
-                            alignment: Alignment.center,
-                            decoration:
-                                BoxDecoration(border: Border.all(width: 1)),
-                            margin: EdgeInsets.symmetric(vertical: 10),
-                            child: Text(
-                                "${val.totalPrice} ${getLang(context, "rial")} ")),
-                      )),
-                ),
+              Consumer<TotalPrice>(
+                builder: (context, val, child) => ListTile(
+                    title: MaterialButton(
+                        child: Text("${getLang(context, "total")} "),
+                        onPressed: () {
+                          val.getTotal();
+                        }),
+                    leading: Container(
+                      height: 60,
+                      width: 120,
+                      alignment: Alignment.center,
+                      child: Container(
+                          height: 60,
+                          width: 120,
+                          alignment: Alignment.center,
+                          decoration:
+                              BoxDecoration(border: Border.all(width: 1)),
+                          margin: EdgeInsets.symmetric(vertical: 10),
+                          child: Text(
+                              "${val.totalPrice} ${getLang(context, "rial")} ")),
+                    )),
               ),
               const SizedBox(
                 height: 30,

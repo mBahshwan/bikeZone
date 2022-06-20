@@ -12,10 +12,10 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.all(10.0),
       child: GridView(
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2,
+            crossAxisCount: 1,
             mainAxisSpacing: 6,
             childAspectRatio: 1,
             crossAxisSpacing: 6,
@@ -27,9 +27,11 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
                   // removeDataBase();
                 }),
                 child: Stack(
-                  alignment: AlignmentDirectional.bottomEnd,
+                  alignment: AlignmentDirectional.topStart,
                   children: [
                     Container(
+                      height: double.infinity,
+                      width: double.infinity,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.all(Radius.circular(15.0)),
                           border: Border.all(
@@ -45,10 +47,10 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Text(
-                          "${getLang(context, "create rent agrement")} ",
-                          style: TextStyle(
-                              fontSize: 20, fontWeight: FontWeight.bold),
-                          textDirection: TextDirection.ltr),
+                        "${getLang(context, "create rent agrement")} ",
+                        style: TextStyle(
+                            fontSize: 20, fontWeight: FontWeight.bold),
+                      ),
                     ),
                   ],
                 )),
@@ -57,10 +59,10 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
                   Navigator.of(context).pushNamed("showData");
                 }),
                 child: Stack(
-                  alignment: AlignmentDirectional.topEnd,
+                  alignment: AlignmentDirectional.topStart,
                   children: [
                     Container(
-                        height: 250,
+                        height: double.infinity,
                         alignment: Alignment.center,
                         decoration: BoxDecoration(
                             color: Colors.white,
@@ -69,10 +71,13 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
                           Icons.group,
                           size: 100,
                         )),
-                    Text(
-                      "${getLang(context, "show customers")} ",
-                      style:
-                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(
+                        "${getLang(context, "show customers")} ",
+                        style: TextStyle(
+                            fontSize: 20, fontWeight: FontWeight.bold),
+                      ),
                     ),
                   ],
                 )),
@@ -84,7 +89,8 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
                   alignment: AlignmentDirectional.topStart,
                   children: [
                     Container(
-                      height: 200,
+                      height: double.infinity,
+                      width: double.infinity,
                       decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.all(Radius.circular(15.0)),

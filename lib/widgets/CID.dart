@@ -61,34 +61,28 @@ class _CustomerInformationState extends State<CustomerInformation> {
                     ),
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
-                        Expanded(
-                          flex: 2,
-                          child: Container(
-                            alignment: Alignment.center,
-                            margin: EdgeInsets.only(left: 50),
-                            padding: EdgeInsets.all(10),
-                            child: Text(
-                              " ${snapshot.data[i]['phone']}",
-                            ),
-                            decoration: BoxDecoration(
-                              border: Border.all(),
-                            ),
+                        Container(
+                          alignment: Alignment.center,
+                          margin: EdgeInsets.only(left: 50),
+                          padding: EdgeInsets.all(10),
+                          child: Text(
+                            " ${snapshot.data[i]['phone']}",
+                          ),
+                          decoration: BoxDecoration(
+                            border: Border.all(),
                           ),
                         ),
-                        Expanded(
-                          flex: 2,
-                          child: Container(
-                            margin: EdgeInsets.only(right: 30),
-                            height: 40,
-                            width: 80,
-                            alignment: Alignment.center,
-                            padding: EdgeInsets.all(10),
-                            child: Text("${snapshot.data[i]['name']}"),
-                            decoration: BoxDecoration(border: Border.all()),
-                          ),
-                        )
+                        Container(
+                          margin: EdgeInsets.only(right: 30),
+                          height: 40,
+                          width: 80,
+                          alignment: Alignment.center,
+                          padding: EdgeInsets.all(10),
+                          child: Text("${snapshot.data[i]['name']}"),
+                          decoration: BoxDecoration(border: Border.all()),
+                        ),
                       ],
                     ),
                     Divider(
